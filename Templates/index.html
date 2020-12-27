@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Summarize webpage using Natural Language Processing">
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'ico/favicon.ico') }}">
+
+    <title>NLP Natural Language Processing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename = 'css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename = 'css/main.css') }}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- Static navbar -->
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Text Summarization</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<!-- +++++ Projects Section +++++ -->
+
+<div class="container pt">
+    <div class="row mt">
+        <div class="col-lg-6 col-lg-offset-3 centered">
+            <h3>Summarize any webpage you wish</h3>
+            <hr>
+            <p>Upload your document and get the result in seconds!!</p>
+            <p>Enjoy your perfect AI-powered summaries</p>
+        </div>
+    </div>
+    <div class="row mt">
+        <div class="col-lg-8 col-lg-offset-2 centered">
+            <form role="form">
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="summarize">Summarize</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="analyse">Analyse</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="quesans">Ques/Ans</a>
+            </form>
+            <hr>
+            <div id="summary">
+                <!-- +++++ Summary output will be displayed here +++++ -->
+            </div>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+
+
+<!-- +++++ Footer Section +++++ -->
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <h4>On Internet</h4>
+                <p><a href="https://github.com/infinity1013/TextSummarization">Project on Github</a></p>
+            </div><!-- /col-lg-3 -->
+
+            <div class="col-lg-2">
+                <h4>Contact</h4>
+                <p><a href="https://www.linkedin.com/in/aadarsh-gupta-335163184/">LinkedIn</a></p>
+            </div><!-- /col-lg-4 -->
+            <div class="col-lg-8">
+                <h4>About the project</h4>
+                <p>Educational project demonstrating the usage of <a href="https://www.nltk.org" target="_blank">NLTK</a> (for NLP) and <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Flask</a> (for webservice).
+                <br>It presents youn the precise version of the content file you upload and also answers your queries/questions from the content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="copyrights">
+    <div class="container">
+        <p>
+            &copy; Copyrights <strong>Stanley</strong>. All Rights Reserved
+        </p>
+        <div class="credits">
+            <!--
+              You are NOT allowed to delete the credit link to TemplateMag with free version.
+              You can delete the credit link only if you bought the pro version.
+              Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/stanley-bootstrap-freelancer-template/
+              Licensing information: https://templatemag.com/license/
+            -->
+            Created with Stanley template by <a href="https://templatemag.com/">TemplateMag</a>
+        </div>
+    </div>
+</div>
+<!-- / copyrights -->
+
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+
+</body>
+
+</html>
