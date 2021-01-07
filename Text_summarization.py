@@ -78,6 +78,10 @@ def ner(sample):
         entity_names.extend(extract_entity_names(tree))
     return len(entity_names)  
 
+#Using Jaccard similarity to calculate if two sentences are similar
+def similar(tokens_a, tokens_b) :
+    ratio = len(set(tokens_a).intersection(tokens_b))/ float(len(set(tokens_a).union(tokens_b)))
+    return ratio
 
 # ......................part 1 (cue phrases).................
 def cue_phrases(sent_tokens):
@@ -349,7 +353,35 @@ def namedEntityRecog(sent_tokens) :
         for k in range(len(counts)):
             counts[k] = (counts[k]/max_value)
             counts[k] = round(counts[k], 3)
+    print(counts)
     return counts
+
+
+#..................... part 12(Pos tagging).........................
+def posTagger(tokenized_sentences) :
+    tagged = []
+    for sentence in tokenized_sentences :
+        tag = nltk.pos_tag(sentence)
+        tagged.append(tag)
+    print(tagged)
+    return tagged
+
+#..................... part 13(jaccards similarity).........................
+def similarityScores(tokenized_sentences) :
+    scores = []
+    for sentence in tokenized_sentences :
+        score = 0;
+        for sen in tokenized_sentences :
+            if sen != sentence :
+                score += similar(sentence,sen)
+        scores.append(score)
+    max_value=max(scores)
+    if(max_value!=0):
+        for k in range(len(scores)):
+            scores[k] = (scores[k]/max_value)
+            scores[k] = round(scores[k], 3)
+    print(scores)
+    return scores
 
 
 corpus=[]
@@ -403,12 +435,14 @@ def get_data(text,text1,flag):
     c=list(c.values())
     d=thematicFeature(sent_tokens)
     e=namedEntityRecog(sent_tokens)
+    #q=posTagger(sent_tokens)
+    r=similarityScores(sent_tokens)
 
     if(flag==0):
         total_score=[]
         sumValues=0
         for k in range(len(sent_tokens)):
-            score=g[k]+h[k]+i[k]+j[k]+p[k]+l[k]+m[k]+n[k]+c[k]+d[k]+e[k]
+            score=g[k]+h[k]+i[k]+j[k]+p[k]+l[k]+m[k]+n[k]+c[k]+d[k]+e[k]+r[k]
             total_score.append(score)
             sumValues+=score
         print(total_score)
@@ -449,7 +483,7 @@ def get_data(text,text1,flag):
                     
     o=list(label.values())
 
-    df=pd.DataFrame(columns=['cue_phrase','numerical_data','sent_length','sent_position','word_freq','upper','proper_nouns','head_matching','centrality','thematic','ner','key','label'])
+    df=pd.DataFrame(columns=['cue_phrase','numerical_data','sent_length','sent_position','word_freq','upper','proper_nouns','head_matching','centrality','thematic','ner','jaccard','key','label'])
     df = df.append(pd.DataFrame({'cue_phrase': g,
                                  'numerical_data': h,
                                  'sent_length': i,
@@ -461,12 +495,13 @@ def get_data(text,text1,flag):
                                  'centrality':c,
                                  'thematic':d,
                                  'ner':e,
+                                 'jaccard':r,
                                  'key': z,
                                  'label': o}), ignore_index=True)
 
     df['label']=df['label'].astype(int)
 
-    columns=['cue_phrase','numerical_data','sent_length','sent_position','word_freq','upper','proper_nouns','head_matching','centrality','thematic','ner']
+    columns=['cue_phrase','numerical_data','sent_length','sent_position','word_freq','upper','proper_nouns','head_matching','centrality','thematic','ner','jaccard']
     training=df[columns]
     test=df.label
     print(training)
