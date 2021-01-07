@@ -3,6 +3,8 @@
 <head>
 	<title>NLP Natural Language Processing</title>
 
+	<link rel="shortcut icon" href="{{ url_for('static', filename = 'images/favicon.ico') }}" type="image/x-icon" />
+
 	 <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename = 'css/bootstrap.css') }}" rel="stylesheet">
 
@@ -10,14 +12,22 @@
     <link href="{{ url_for('static', filename = 'css/main.css') }}" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-
+    <style type="text/css">
+	    body{
+	    	background: url('../static/images/bulb.png');;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+    </style>
 </head>
 <body>
 	<!-- Static navbar -->
-	<div class="navbar navbar-inverse navbar-static-top">
+	<div class="navbar navbar-inverse navbar-static-top" id="edit_analyse1">
 	    <div class="container">
 	        <div class="navbar-header">
-	            <a class="navbar-brand" href="/">Text Summarization</a>
+	            <a class="navbar-brand" href="/">
+	            	<img class="logo" src="{{ url_for('static', filename = 'images/logo1.png')}}" alt="" />
+	        	</a>
 	        </div>
 	        <div class="navbar-collapse collapse">
 	            <ul class="nav navbar-nav navbar-right">
@@ -43,15 +53,15 @@
 	        	<form enctype="multipart/form-data" method="POST" action="/analyse">
 	        		<div class='custom'>
 	        		<label for="file-upload">Upload Text File</label>
-	        		<input id="file-upload" name="filename" type="file" style="display:none;" required>
+	        		<input id="file-upload" name="filename" type="file" class="btn btn-outline-dark" style="display:none;" required>
 	        	</div>
 	        		<br><br>
 	        		<div class='custom'>
 	        		<label for="file_summary">Upload Summarized File</label>
-	        		<input id="file_summary" name="file_summary" type="file" style="display:none;" required>
+	        		<input id="file_summary" name="file_summary" type="file" class="btn btn-outline-dark" style="display:none;" required>
 	        	</div>
 	        		<br><br>
-			  		<input class="btn btn-warning" type="submit" value="Submit">
+			  		<button class="btn btn-dark" type="submit" value="Submit">Submit</button>
 				</form>
 			
 	        </div>
@@ -61,7 +71,7 @@
 	<div class="smart-wrap">
         <div class="smart-forms smart-container wrap-3">
 
-            <div class="form-header header-blue">
+            <div class="form-header header-blue" id="edit_analyse2">
                 <h5><i class="fa fa-comments"></i>Accuracy</h5>
             </div><!-- end .form-header section -->
 
@@ -83,7 +93,7 @@
         </div><!-- end .smart-forms section -->
     </div><!-- end .smart-wrap section -->
 
-    <div></div><!-- end section -->
+    <div><br><br></div><!-- end section -->
 
 	 <script>
     		$('#file-upload').change(function() {
