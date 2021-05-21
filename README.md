@@ -23,8 +23,8 @@ The features used are:
 7) Number of proper Noun
 8) Title Features
 9) Centrality
-10)Thematic Features
-11)Named Entity Recoginition
+10) Thematic Features
+11) Named Entity Recoginition
 
 ### BERT SUMMARIZER
 We have also implemented a text summarizer using BERT that can summarize large data using just a few lines of code. 
@@ -62,9 +62,31 @@ Bootstrap is an open-source JavaScript and CSS framework that can be used as a b
 
 
 ## Applications of Our Project:
-1.People need to learn much from texts. But they tend to want to spend less time while doing this.
-2.It aims to solve this problem by supplying them the summaries of the Covid-19 data from which they want to gain information.
-3.Goals of this project are that these summaries will be as important as possible in the aspect of the texts’ intention.
-4.The user would easily get answers to his queries.
-5.Supplying the user, a smooth and clear interface.
-6.Configuring a fast replying server system.
+1. People need to learn much from texts. But they tend to want to spend less time while doing this.
+2. It aims to solve this problem by supplying them the summaries of the Covid-19 data from which they want to gain information.
+3. Goals of this project are that these summaries will be as important as possible in the aspect of the texts’ intention.
+4. The user would easily get answers to his queries.
+5. Supplying the user, a smooth and clear interface.
+6. Configuring a fast replying server system.
+
+
+### Web Interface
+
+#### Dashboard
+![Alt Text](/images/Dashboard.png)
+
+
+#### About the Project
+![Alt Text](/images/About_Project.png)
+
+
+#### Summarize
+![Alt Text](/images/Summarize.png)
+
+
+#### Question Answering
+![Alt Text](/images/Q&A.png)
+
+
+#### Analyse
+![Alt Text](/images/Analyse.png)
