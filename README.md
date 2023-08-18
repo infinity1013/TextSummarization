@@ -70,6 +70,31 @@ Bootstrap is an open-source JavaScript and CSS framework that can be used as a b
 6. Configuring a fast replying server system.
 
 
+### Run Locally
+
+#### 1. Download Anaconda
+https://www.anaconda.com/download
+
+#### 2. Clone the git repository
+git clone https://github.com/infinity1013/TextSummarization.git
+
+#### 3. Create a new environment in anaconda promt
+$conda create -n textSummarize python===3.6.5
+
+#### 4. Activating Environment
+$conda activate textSummarize
+
+#### 5. Installing dependencies from requirements.txt
+$conda install -r requirements.txt
+
+##### 6. Create builder.py inside google\protobuf\internal locally
+Copy the content from https://raw.githubusercontent.com/protocolbuffers/protobuf/main/python/google/protobuf/internal/builder.py
+and add it in C:\Users\{userName}\anaconda3\envs\textSummarize\lib\site-packages\google\protobuf\internal\builder.py
+
+#### 7. Run python file in anaconda prompt
+python application.py
+
+
 ### Web Interface
 
 #### Dashboard
