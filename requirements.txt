@@ -9,7 +9,7 @@ lxml==4.6.3
 MarkupSafe==2.0.1
 nltk==3.6.2
 numpy==1.19.5
-pandas==1.2.4
+pandas==1
 PyPDF2==1.26.0
 python-docx==0.8.11
 python-pptx==0.6.19
